@@ -267,6 +267,7 @@ ul{
         				type:"POST",
         				success:function(output){
 							alert(output);
+							console.log(output);
         					location.reload(true);
         				}
 						});

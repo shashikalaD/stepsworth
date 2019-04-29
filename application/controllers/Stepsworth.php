@@ -71,14 +71,17 @@ class Stepsworth extends CI_Controller {
 		$res=$this->Contact_modal->saverecords($n,$e,$m);
 		if(!$res)
 		{
-			echo "Records Saved Successfully.";
+			$data['msg']= "Records Saved Successfully.";
+			
 		}		
 		else
 		{
-			echo "Error Occured. cant insert data!!!";
+			$data['msg']= "Error Occured. cant insert data!!!";
 		}
+		echo $data['msg'];
 		die();
 		}
+
 		
 	}
 
@@ -115,6 +118,25 @@ class Stepsworth extends CI_Controller {
 			if(!$res)
 			{
 				echo "Records Saved Successfully.";
+				$config=Array(
+				'protocol' => 'mail',
+				'smtp_host' => 'smtp.googlemail.com',
+				'smtp_port' => 465,
+				'smtp_user' => 'patilkomal07web@gmail.com',
+				'smtp_pass' => 'softwaresolution',
+				'mailtype' => 'html',
+				'charset' => 'utf-8',
+			);
+			$this->load->library('email');
+			$this->email->initialize($config);
+			$this->email->set_newline("\r\n");
+			$this->email->from($emails,$name);
+			$this->email->to('info@webcreintors.com');
+			$this->email->cc('komalpatil@webcreintors.com');
+			$this->email->subject($profile);
+			$this->email->message($name,$mobile,$qualification,$experience,$attaddfile);
+
+			$result=$this->email->send();
 			}		
 			else
 			{
