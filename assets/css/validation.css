@@ -1,0 +1,12 @@
+.text-red
+{
+	color:red;
+}
+
+.text-red1
+{
+	color:red;
+	font-weight: bold;
+	background-color:yellow;
+	font-size: 16px;
+}
