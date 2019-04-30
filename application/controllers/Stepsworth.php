@@ -19,18 +19,6 @@ class Stepsworth extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
- 	public function __construct()
-	{
-	//call CodeIgniter's default Constructor
-	parent::__construct();
-	
-	//load database libray manually
-	$this->load->database();
-	//load Model
-	$this->load->model('Contact_modal');
-	$this->load->model('Career_modal');
-	$this->load->model('Adminlogin_modal');
-	}
 
 	public function index()
 	{

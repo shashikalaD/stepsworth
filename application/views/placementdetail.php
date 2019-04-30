@@ -12,7 +12,8 @@
             <th>PHONE</th>  
             <th>STATUS</th>  
             <th>EXPERIENCE</th>  
-            <th>DATE</th>   
+            <th>DATE</th>  
+              <th>VIEW</th>   
         </thead>  
         <tbody>  
             <?php  
@@ -60,8 +61,9 @@
                                 <td>$row->phone</td>
                                 <td>$status</td>
                                 <td>$row->experience</td>
-                                <td>$row->date</td>  
-                    </tr>";  
+                                <td>$row->date</td>"  
+                                ?><td><a href="<?php echo $row->resume;?>" target="_blank" class='btn-btn-success'>View CV</a></td><?php 
+                    echo "</tr>";  
                 }  
             ?>  
         </tbody>  
