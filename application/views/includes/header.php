@@ -69,7 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<li><a href="<?php echo base_url()?>placement">Placement</a></li>
 		<li><a href="<?php echo base_url()?>career">Career</a></li>
 		<li><a href="<?php echo base_url()?>contact">Contact Us</a></li>
-    <li><a href="<?php echo base_url()?>admin">Login</a></li>
+    <!-- <li><a href="<?php echo base_url()?>admin">Login</a></li> -->
   <?php }
   else
   {

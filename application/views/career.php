@@ -188,6 +188,7 @@ ul{
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
+    	<span id="msgs" class="text-red1"></span>
     	<input type="button" value="Send" class="btn btn-primary" id="save" onclick="AddorUpdateFun()">
     </div>
   </div>
@@ -259,6 +260,8 @@ ul{
 			formData.append('status', status);
 			formData.append('experience', experienceY+' Years and '+experienceM + ' Months');
 			formData.append('exampleInputFile', exampleInputFile);
+			$("#msgs").html("Loading Please Wait ..");
+			$("#save").hide(700);
 			$.ajax({        
 				        url: "<?php echo base_url(); ?>" + "index.php/Stepsworth/career",     				
         				data : formData,
