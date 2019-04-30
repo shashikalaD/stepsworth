@@ -19,18 +19,6 @@ class Stepsworth extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
- 	public function __construct()
-	{
-	//call CodeIgniter's default Constructor
-	parent::__construct();
-	
-	//load database libray manually
-	$this->load->database();
-	//load Model
-	$this->load->model('Contact_modal');
-	$this->load->model('Career_modal');
-	$this->load->model('Adminlogin_modal');
-	}
 
 	public function index()
 	{
@@ -71,7 +59,7 @@ class Stepsworth extends CI_Controller {
 		$res=$this->Contact_modal->saverecords($n,$e,$m);
 		if(!$res)
 		{
-			$data['msg']= "Records Saved Successfully.";
+			$data['msg']= "Message Send Successfully.";
 			
 		}		
 		else
@@ -117,7 +105,7 @@ class Stepsworth extends CI_Controller {
 			$res=$this->Career_modal->saverecords($profile,$name,$emails,$qualification,$mobile,$status,$experience,$attaddfile,$profiledata);
 			if(!$res)
 			{
-				echo "Records Saved Successfully.";
+				echo "Application Send Successfully.";
 				$config=Array(
 				'protocol' => 'mail',
 				'smtp_host' => 'smtp.googlemail.com',
