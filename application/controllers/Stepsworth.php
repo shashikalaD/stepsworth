@@ -131,10 +131,28 @@ class Stepsworth extends CI_Controller {
 			$this->email->initialize($config);
 			$this->email->set_newline("\r\n");
 			$this->email->from($emails,$name);
-			$this->email->to('info@webcreintors.com');
-			$this->email->cc('komalpatil@webcreintors.com');
-			$this->email->subject($profile);
-			$this->email->message($name,$mobile,$qualification,$experience,$attaddfile);
+			$this->email->to('praveenpatil5621@gmail.com');
+			// $this->email->cc('komalpatil@webcreintors.com');
+			if($profile==1)
+                  {
+                    $profile1='Position Applied For';
+                  }
+                  elseif($profile==2)
+                  {
+                    $profile1='English Trainer';
+                  }
+                  elseif($profile==3)
+                  {
+                    $profile1='Tele-Callers / Interns';
+                  }
+                  else 
+                  {
+                    $profile1='Business Associates';
+                  }
+
+			$this->email->subject($profile1);
+			$this->email->message("Name :- ".$name."<br/> Mobile :-".$mobile."<br/>Qualification :-".$qualification."<br/>Experience :-".$experience);
+			// $this->emai->attach($attaddfile);
 
 			$result=$this->email->send();
 			}		
